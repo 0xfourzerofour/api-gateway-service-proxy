@@ -1,6 +1,6 @@
 # AWS API GATEWAY SERVICE PROXY
 
-This project allows you to define a list of microservices in the `services.json` file and then generate a single endpoint that will proxy each request through to the services
+This project allows you to define a list of microservices in the `services.json` file and then generate an AWS Cloudformation template that will provision a single endpoint that will proxy each request through to the services
 
 ## Usage
 
