@@ -92,5 +92,5 @@ if __name__ == "__main__":
         result = generate_clouformation(data)
     
     with open('data.template', 'w') as fp:
-        json.dump(result, fp)
+        json.dump(result, fp,  indent=2)
     
