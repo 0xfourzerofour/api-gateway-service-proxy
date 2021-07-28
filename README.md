@@ -18,6 +18,10 @@ aws cloudformation create-stack --stack-name {example} --template-body file://da
 
 ![image-proxy2](https://github.com/joshpauline/api-gateway-service-proxy/blob/master/images/proxyimage2.png?raw=true)
 
+### Note
+
+You will need to deploy the API gateway before being able to access the endpoint.
+
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
