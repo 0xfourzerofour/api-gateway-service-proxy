@@ -1,8 +1,6 @@
 
 import json
 from pprint import pprint
-import pickle
-
 
 base = {
     "AWSTemplateFormatVersion": "2010-09-09",
