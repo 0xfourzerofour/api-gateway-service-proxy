@@ -10,6 +10,9 @@ python generate.py
 aws cloudformation create-stack --stack-name {example} --template-body file://data.template --profile {example (do not supply if default)}
 ```
 
+
+![image-proxy](https://github.com/joshpauline/api-gateway-service-proxy/images/proxyimage.png?raw=true)
+
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
