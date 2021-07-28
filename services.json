@@ -1,8 +1,8 @@
 {
   "rootName": "testRoot",
   "services": {
-    "service1": "http://yourservice1.com",
-    "service2": "http://yourservice2.com",
-    "service3": "http://yourservice3.com"
+    "service1": "http://yourservice1.com/{proxy}",
+    "service2": "http://yourservice2.com/{proxy}",
+    "service3": "http://yourservice3.com/{proxy}"
   }
 }
