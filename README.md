@@ -20,7 +20,8 @@ aws cloudformation create-stack --stack-name {example} --template-body file://da
 
 ### Note
 
-You will need to deploy the API gateway before being able to access the endpoint.
+- You will need to deploy the API gateway before being able to access the endpoint.
+- My example does not require an Authorizer because I prefer to define the auth permissions at a service level
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
