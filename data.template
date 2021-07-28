@@ -1,1 +1,169 @@
-{"AWSTemplateFormatVersion": "2010-09-09", "Resources": {"testRoot": {"Type": "AWS::ApiGateway::RestApi", "Properties": {"Name": "testRoot", "EndpointConfiguration": {"Types": ["EDGE"]}}}, "service1": {"Type": "AWS::ApiGateway::Resource", "Properties": {"RestApiId": {"Ref": "testRoot"}, "ParentId": {"Fn::GetAtt": ["testRoot", "RootResourceId"]}, "PathPart": "service1"}}, "service1proxy": {"Type": "AWS::ApiGateway::Resource", "Properties": {"RestApiId": {"Ref": "testRoot"}, "ParentId": {"Ref": "service1"}, "PathPart": "{proxy+}"}}, "service1method": {"Type": "AWS::ApiGateway::Method", "Properties": {"RestApiId": {"Ref": "testRoot"}, "HttpMethod": "ANY", "ResourceId": {"Ref": "service1proxy"}, "RequestParameters": {"method.request.path.proxy": true}, "Integration": {"IntegrationHttpMethod": "ANY", "Uri": "http://yourservice1.com/{proxy}", "Type": "HTTP_PROXY", "RequestParameters": {"integration.request.path.proxy": "method.request.path.proxy"}}, "AuthorizationType": "NONE"}}, "service2": {"Type": "AWS::ApiGateway::Resource", "Properties": {"RestApiId": {"Ref": "testRoot"}, "ParentId": {"Fn::GetAtt": ["testRoot", "RootResourceId"]}, "PathPart": "service2"}}, "service2proxy": {"Type": "AWS::ApiGateway::Resource", "Properties": {"RestApiId": {"Ref": "testRoot"}, "ParentId": {"Ref": "service2"}, "PathPart": "{proxy+}"}}, "service2method": {"Type": "AWS::ApiGateway::Method", "Properties": {"RestApiId": {"Ref": "testRoot"}, "HttpMethod": "ANY", "ResourceId": {"Ref": "service2proxy"}, "RequestParameters": {"method.request.path.proxy": true}, "Integration": {"IntegrationHttpMethod": "ANY", "Uri": "http://yourservice2.com/{proxy}", "Type": "HTTP_PROXY", "RequestParameters": {"integration.request.path.proxy": "method.request.path.proxy"}}, "AuthorizationType": "NONE"}}, "service3": {"Type": "AWS::ApiGateway::Resource", "Properties": {"RestApiId": {"Ref": "testRoot"}, "ParentId": {"Fn::GetAtt": ["testRoot", "RootResourceId"]}, "PathPart": "service3"}}, "service3proxy": {"Type": "AWS::ApiGateway::Resource", "Properties": {"RestApiId": {"Ref": "testRoot"}, "ParentId": {"Ref": "service3"}, "PathPart": "{proxy+}"}}, "service3method": {"Type": "AWS::ApiGateway::Method", "Properties": {"RestApiId": {"Ref": "testRoot"}, "HttpMethod": "ANY", "ResourceId": {"Ref": "service3proxy"}, "RequestParameters": {"method.request.path.proxy": true}, "Integration": {"IntegrationHttpMethod": "ANY", "Uri": "http://yourservice3.com/{proxy}", "Type": "HTTP_PROXY", "RequestParameters": {"integration.request.path.proxy": "method.request.path.proxy"}}, "AuthorizationType": "NONE"}}}}
+{
+  "AWSTemplateFormatVersion": "2010-09-09",
+  "Resources": {
+    "testRoot": {
+      "Type": "AWS::ApiGateway::RestApi",
+      "Properties": {
+        "Name": "testRoot",
+        "EndpointConfiguration": {
+          "Types": [
+            "EDGE"
+          ]
+        }
+      }
+    },
+    "service1": {
+      "Type": "AWS::ApiGateway::Resource",
+      "Properties": {
+        "RestApiId": {
+          "Ref": "testRoot"
+        },
+        "ParentId": {
+          "Fn::GetAtt": [
+            "testRoot",
+            "RootResourceId"
+          ]
+        },
+        "PathPart": "service1"
+      }
+    },
+    "service1proxy": {
+      "Type": "AWS::ApiGateway::Resource",
+      "Properties": {
+        "RestApiId": {
+          "Ref": "testRoot"
+        },
+        "ParentId": {
+          "Ref": "service1"
+        },
+        "PathPart": "{proxy+}"
+      }
+    },
+    "service1method": {
+      "Type": "AWS::ApiGateway::Method",
+      "Properties": {
+        "RestApiId": {
+          "Ref": "testRoot"
+        },
+        "HttpMethod": "ANY",
+        "ResourceId": {
+          "Ref": "service1proxy"
+        },
+        "RequestParameters": {
+          "method.request.path.proxy": true
+        },
+        "Integration": {
+          "IntegrationHttpMethod": "ANY",
+          "Uri": "http://yourservice1.com/{proxy}",
+          "Type": "HTTP_PROXY",
+          "RequestParameters": {
+            "integration.request.path.proxy": "method.request.path.proxy"
+          }
+        },
+        "AuthorizationType": "NONE"
+      }
+    },
+    "service2": {
+      "Type": "AWS::ApiGateway::Resource",
+      "Properties": {
+        "RestApiId": {
+          "Ref": "testRoot"
+        },
+        "ParentId": {
+          "Fn::GetAtt": [
+            "testRoot",
+            "RootResourceId"
+          ]
+        },
+        "PathPart": "service2"
+      }
+    },
+    "service2proxy": {
+      "Type": "AWS::ApiGateway::Resource",
+      "Properties": {
+        "RestApiId": {
+          "Ref": "testRoot"
+        },
+        "ParentId": {
+          "Ref": "service2"
+        },
+        "PathPart": "{proxy+}"
+      }
+    },
+    "service2method": {
+      "Type": "AWS::ApiGateway::Method",
+      "Properties": {
+        "RestApiId": {
+          "Ref": "testRoot"
+        },
+        "HttpMethod": "ANY",
+        "ResourceId": {
+          "Ref": "service2proxy"
+        },
+        "RequestParameters": {
+          "method.request.path.proxy": true
+        },
+        "Integration": {
+          "IntegrationHttpMethod": "ANY",
+          "Uri": "http://yourservice2.com/{proxy}",
+          "Type": "HTTP_PROXY",
+          "RequestParameters": {
+            "integration.request.path.proxy": "method.request.path.proxy"
+          }
+        },
+        "AuthorizationType": "NONE"
+      }
+    },
+    "service3": {
+      "Type": "AWS::ApiGateway::Resource",
+      "Properties": {
+        "RestApiId": {
+          "Ref": "testRoot"
+        },
+        "ParentId": {
+          "Fn::GetAtt": [
+            "testRoot",
+            "RootResourceId"
+          ]
+        },
+        "PathPart": "service3"
+      }
+    },
+    "service3proxy": {
+      "Type": "AWS::ApiGateway::Resource",
+      "Properties": {
+        "RestApiId": {
+          "Ref": "testRoot"
+        },
+        "ParentId": {
+          "Ref": "service3"
+        },
+        "PathPart": "{proxy+}"
+      }
+    },
+    "service3method": {
+      "Type": "AWS::ApiGateway::Method",
+      "Properties": {
+        "RestApiId": {
+          "Ref": "testRoot"
+        },
+        "HttpMethod": "ANY",
+        "ResourceId": {
+          "Ref": "service3proxy"
+        },
+        "RequestParameters": {
+          "method.request.path.proxy": true
+        },
+        "Integration": {
+          "IntegrationHttpMethod": "ANY",
+          "Uri": "http://yourservice3.com/{proxy}",
+          "Type": "HTTP_PROXY",
+          "RequestParameters": {
+            "integration.request.path.proxy": "method.request.path.proxy"
+          }
+        },
+        "AuthorizationType": "NONE"
+      }
+    }
+  }
+}
