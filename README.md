@@ -10,8 +10,13 @@ python generate.py
 aws cloudformation create-stack --stack-name {example} --template-body file://data.template --profile {example (do not supply if default)}
 ```
 
+### Post Stack Upload
 
-![image-proxy](https://github.com/joshpauline/api-gateway-service-proxy/images/proxyimage.png?raw=true)
+![image-proxy](https://github.com/joshpauline/api-gateway-service-proxy/blob/master/images/proxyimage.png?raw=true)
+
+![image-proxy1](https://github.com/joshpauline/api-gateway-service-proxy/blob/master/images/proxyimage1.png?raw=true)
+
+![image-proxy2](https://github.com/joshpauline/api-gateway-service-proxy/blob/master/images/proxyimage2.png?raw=true)
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
