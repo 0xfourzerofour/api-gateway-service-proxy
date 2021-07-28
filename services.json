@@ -1,0 +1,8 @@
+{
+  "rootName": "testRoot",
+  "services": {
+    "service1": "http://yourservice1.com",
+    "service2": "http://yourservice2.com",
+    "service3": "http://yourservice3.com"
+  }
+}
