@@ -7,7 +7,7 @@ This project allows you to define a list of microservices in the `services.json`
 ```
 python generate.py
 
-aws cloudformation create-stack --stack-name {example} -template-body file://data.template --profile {example (do not supply if default)}
+aws cloudformation create-stack --stack-name {example} --template-body file://data.template --profile {example (do not supply if default)}
 ```
 
 ## Contributing
